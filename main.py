@@ -6,9 +6,9 @@ set_website_title("Stoichiometry_Code")
 set_site_information(
     author="Jeffrey Fu",
     description="Simple stoichiometry with balenced equations.",
-    sources="Thanks to the Drafter docs and my study group.",
-    planning=["plan.pdf", "design.pdf"],
-    links=["https://github.com/your-username/your-repository"]
+    sources="Thanks to Drafter, Chat, and me.",
+    planning=["Jeffrey Fu Final Project Selection.pdf", "Jeffrey Fu CS1 Final Project 1_ Design.pdf"],
+    links=["https://github.com/jeffgt-bit/Stoichiometry"]
 )
 hide_debug_information()
 set_website_framed(False)
@@ -363,7 +363,8 @@ def product_mole(state:State)->Page:
     for chemical in state.products:
         chemical.moles =state.limiting_moles*chemical.coefficient
         resulting_product.append (chemical.product+ ": " +str(round(chemical.moles,3))+" mole")
-    return Page(state,["Limiting Reactant:" + limiting.reactant,"Moles of Products:", *resulting_product, Button("New Equation ", "new_equation"
+    return Page(state,["Limiting Reactant:" + limiting.reactant,"Moles of Products:",
+                       *resulting_product, Button("New Equation ", "new_equation"
                                                                                                                  )])
 @route
 def new_equation(state:State)->Page:
